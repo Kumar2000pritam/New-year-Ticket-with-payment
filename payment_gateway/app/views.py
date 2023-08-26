@@ -12,7 +12,7 @@ def index(request):
         email=request.POST['email']
         amount=int(request.POST['amount'])*100
         if name and email:
-            client=razorpay.Client(auth=("rzp_test_OIBDaSHD0J4wZ3", "PNzj3Ytd44wEd7r6gzyJCesR"))
+            client=razorpay.Client(auth=('add test code', 'add client code'))
             payment= client.order.create({'amount':amount, 'currency': 'INR','payment_capture':'1' })
             order=Details(name=name, email=email, amount=amount, payment_id=payment['id'])
             order.save()
